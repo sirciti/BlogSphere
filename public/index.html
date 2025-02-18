@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogSphere - Accueil</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">BlogSphere</div>
+        <nav>
+            <ul>
+                <li><a href="#" id="accueil-link">Accueil</a></li>
+                <li><a href="#" id="blog-link">Blog</a></li>
+                <li><a href="#" id="a-propos-link">À propos</a></li>
+                <li><a href="#" id="contact-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <h1>Explorez les Horizons de l'Écriture</h1>
+        <p>Découvrez des articles passionnants sur l'écriture, la technologie et la créativité.</p>
+        <a href="#articles" class="cta">Découvrir les Articles</a>
+    </section>
+    <section class="articles" id="articles">
+        <article>
+            <img src="article1.jpg" alt="Aperçu de l'article 1">
+            <h2>Titre de l'Article 1</h2>
+            <p>Brève description de l'article 1.</p>
+        </article>
+        <article>
+            <img src="article2.jpg" alt="Aperçu de l'article 2">
+            <h2>Titre de l'Article 2</h2>
+            <p>Brève description de l'article 2.</p>
+        </article>
+    </section>
+    <section class="about">
+        <h2>À propos</h2>
+        <p>Présentation de BlogSphere et de son objectif.</p>
+    </section>
+    <footer>
+        <p>&copy; 2025 BlogSphere - Tous droits réservés</p>
+    </footer>
+
+    <script>
+        document.getElementById('accueil-link').addEventListener('click', function() {
+            console.log('Clic sur Accueil');
+            // Ajoutez ici l'action que vous souhaitez exécuter
+        });
+
+        document.getElementById('blog-link').addEventListener('click', function() {
+            console.log('Clic sur Blog');
+            // Ajoutez ici l'action que vous souhaitez exécuter
+            fetch('/blog-action', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.error('Erreur:', error));
+        });
+
+        document.getElementById('a-propos-link').addEventListener('click', function() {
+            console.log('Clic sur À propos');
+            // Ajoutez ici l'action que vous souhaitez exécuter
+        });
+
+        document.getElementById('contact-link').addEventListener('click', function() {
+            console.log('Clic sur Contact');
+            // Ajoutez ici l'action que vous souhaitez exécuter
+        });
+    </script>
+</body>
+</html>
+
