@@ -1,8 +1,27 @@
 services:
   app:
+    image: blogsphere:latest
     build: .
     ports:
       - "3000:3000"
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: any
+    networks:
+      - blogsphere-net
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/blogSphere
+
+  mongo:
+    image: mongo
     volumes:
-      - .:/app
-    command: npm start
+      - mongo_data:/data/db
+    networks:
+      - blogsphere-net
+
+networks:
+  blogsphere-net:
+
+volumes:
+  mongo_data:

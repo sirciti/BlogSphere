@@ -1,0 +1,32 @@
+services:
+  app:
+    image: blogsphere:latest
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - MONGO_URL=mongodb://db:27017/blogSphere
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: on-failure
+    networks:
+      - blogsphere_net
+
+  db:
+    image: mongo:latest
+    volumes:
+      - mongo_data:/data/db
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+    networks:
+      - blogsphere_net
+
+networks:
+  blogsphere_net:
+    driver: overlay
+
+volumes:
+  mongo_data:

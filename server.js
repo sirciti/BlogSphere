@@ -56,7 +56,7 @@ app.post('/blog-action', (req, res) => {
     res.json({ message: 'Action réussie' });
 });
 
-// Lancer le serveur
-app.listen(PORT, () => {
+// Lancer le serveur en écoutant sur 0.0.0.0 pour Docker Swarm
+app.listen(PORT, '0.0.0.0', () => {
     console.log(`Serveur démarré sur http://localhost:${PORT}`);
 });
