@@ -1,0 +1,29 @@
+# Node.js dependencies  
+node_modules/  
+npm-debug.log  
+yarn-error.log  
+
+# Environnement  
+.env  
+.DS_Store  
+
+# Logs  
+logs/  
+*.log  
+npm-debug.log*  
+yarn-debug.log*  
+yarn-error.log*  
+pnpm-debug.log*  
+
+# Docker  
+docker-compose.override.yml  
+.dockerignore  
+
+# MongoDB  
+/data/db/  
+dump/  
+
+# Ignorer les fichiers système  
+*.swp  
+*~  
+Thumbs.db  
